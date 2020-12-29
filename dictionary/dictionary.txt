@@ -75,6 +75,8 @@
 3D
 43a0
 4G
+4K
+4k
 50F4
 5700XT
 64MB
@@ -130,6 +132,7 @@ AlpsT4USB
 AmazonBasics
 Andrey's
 Andrey1970AppleLife
+Aorus
 ApfsDriverLoader
 Apianti
 Apianti's
@@ -775,9 +778,9 @@ TextMode
 TgtBridge
 ThinkPad
 Thinkpad
+ThrRip
 ThreadRipper
 Threadripper
-ThrRip
 TimeMachine
 Touchbase
 Trackpad
@@ -848,6 +851,7 @@ WhateverGreen's
 Wifi
 X299
 X3100
+X470
 X520
 X540
 X570
@@ -1122,6 +1126,7 @@ reimplements
 renderer
 repo
 repos
+resolutuion
 savvamitrofanov
 shiki
 shikigva
