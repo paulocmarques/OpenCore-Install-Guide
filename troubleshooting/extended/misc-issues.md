@@ -1,6 +1,6 @@
 # Miscellaneous Issues
 
-* Supported version: 0.6.5
+* Supported version: 0.6.6
 
 Miscellaneous issues not revolving around macOS itself such as multibooting.
 
@@ -68,7 +68,7 @@ So with OpenCore, we have to note that legacy Windows installs are not supported
 Now to get onto troubleshooting:
 
 * Make sure `Misc -> Security -> ScanPolicy` is set to `0` to show all drives
-* Enable `Misc -> Boot -> Hideself` is enabled when Windows bootloader is located on the same drive
+* Enable `Misc -> Boot -> Hideself` when Windows bootloader is located on the same drive
 
 ## Selecting Startup Disk doesn't apply correctly
 

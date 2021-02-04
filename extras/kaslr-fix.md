@@ -1,6 +1,6 @@
 # Fixing KASLR slide values
 
-* Supported version: 0.6.5
+* Supported version: 0.6.6
 
 This section is for users who wish to understand and fix "Couldn't allocate runtime area" errors. This is most common with either Z390, X99 and X299. This section will also support Clover as the info is also useful for them.
 
@@ -43,12 +43,12 @@ The real fix to this is quite simple actually, the process is both the same for 
   * Clover Shell(most users already have this included, usually called shell64.efi or some variation)
     * This will be found under `EFI/CLOVER/tools`
     * If you're missing this, you can grab it from the [CLOVERV2-xxxx.zip](https://github.com/CloverHackyColor/CloverBootloader/releases)
-  * [OcQuirks](https://github.com/CloverHackyColor/CloverBootloader/releases/latest) since Clover v5210 by downloading the .zip CloverV2-xxxx.zip it is included under /CloverV2/EFI/CLOVER/drivers/off/UEFI/MemoryFix/OcQuirks.efi, this needs to be coupled with OpenRuntime.efi which is provided in the same path
+  * [OcQuirks](https://github.com/CloverHackyColor/CloverBootloader/releases/latest) since Clover v5120 by downloading the .zip CloverV2-xxxx.zip it is included under /CloverV2/EFI/CLOVER/drivers/off/UEFI/MemoryFix/OcQuirks.efi, this needs to be coupled with OpenRuntime.efi which is provided in the same path
 (Don't mix Aptio fixes together or use OsxAptioFixDrvX, AptioMemoryFix, only OcQuirks is supported in this guide)
     * Make sure this is inside `EFI/CLOVER/drivers/UEFI`
   * OpenRuntime.efi(Bundled with CloverV2)
     * Make sure this is inside `EFI/CLOVER/drivers/UEFI`
-  * ~~OcQuirks.plist~~(Bundled in Clover's config.plist, in last section after `SystemParameters` ). To change OpenRuntime quirks, check the end of the config-sample.plist from CloverV2-xxxx.zip, since Slice merged ReddestDream's OcQuirks.plist in Clover's config.pist
+  * ~~OcQuirks.plist~~(Bundled in Clover's config.plist, in last section after `SystemParameters` ). To change OpenRuntime quirks, check the end of the config-sample.plist from CloverV2-xxxx.zip, since Slice merged ReddestDream's OcQuirks.plist in Clover's config.plist
 
 * **OpenCore users**:
   * [OpenRuntime](https://github.com/acidanthera/OpenCorePkg/releases)
@@ -77,6 +77,7 @@ The reason we need to reset the memory map is we want it to be more deterministi
 * Clear CMOS
 * Enable much needed BIOS settings:
   * `Above4GDecoding`: This allows devices to use memory regions above 4GB meaning macOS will have more room to fit, can be problematic on some X99, X299 so recommended to test with and without.
+    * Note: On BIOS supporting Resizable BAR Support, enabling Above4G will unlock this option. Ensure BAR support is disabled if the option presents itself.
   * `Boot Options -> Windows8.1/10 mode`: This will make sure no old legacy garbage is loaded. Fun fact, `other OS` is only designed for booting older versions of Windows and not for other OS.
 * Disable as many unneeded devices in the BIOS(this means there is less variation in the map on each boot, so fewer chances of boot failure). Common settings:
   * `CSM`: For legacy support, adds a bunch of garbage we don't want. This also can break the shell so you can't boot into it.

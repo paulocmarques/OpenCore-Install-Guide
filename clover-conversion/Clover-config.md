@@ -1,6 +1,6 @@
 # Converting common properties from Clover to OpenCore
 
-* Supported version: 0.6.5
+* Supported version: 0.6.6
 
 So this little(well not so little as I reread this...) page is for users who are having issues migrating from Clover to OpenCore as some of their legacy quirks are required or the Configuration.pdf isn't well suited for laptop users.  
 
@@ -179,7 +179,7 @@ So with the transition from Clover to OpenCore we should start removing unneeded
   * 1 -> `<01>`
   * 2 -> `<02>`
 
-# Cpu
+# CPU
 
 **Type**:
 
@@ -442,7 +442,7 @@ For Low end Haswell+ like Celerons, please see here for recommended patches: [Bu
 
 **External Icons Patch**:
 
-* `kernel -> Quirks -> ExternalDiskIcons -> YES`
+* `Kernel -> Quirks -> ExternalDiskIcons -> YES`
 * Used for when you internal disk are seen as external on macOS
 
 **AppleRTC**

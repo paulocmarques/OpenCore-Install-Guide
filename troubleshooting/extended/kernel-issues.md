@@ -1,6 +1,6 @@
 # Kernel Issues
 
-* Supported version: 0.6.5
+* Supported version: 0.6.6
 
 Issues surrounding from initial booting the macOS installer to right before the install GUI pops up.
 
@@ -26,7 +26,6 @@ Issues surrounding from initial booting the macOS installer to right before the 
 * [Kernel Panic `AppleIntelMCEReporter`](#kernel-panic-appleintelmcereporter)
 * [Kernel Panic `AppleIntelCPUPowerManagement`](#kernel-panic-appleintelcpupowermanagement)
 * [Keyboard works but trackpad does not](#keyboard-works-but-trackpad-does-not)
-* [Kernel Panic on `Invalid frame pointer`](#kernel-panic-on-invalid-frame-pointer)
 * [`kextd stall[0]: AppleACPICPU`](#kextd-stall-0-appleacpicpu)
 * [Kernel Panic on AppleIntelI210Ethernet](#kernel-panic-on-appleinteli210ethernet)
 * [Kernel panic on "Wrong CD Clock Frequency" with Icelake laptop](#kernel-panic-on-wrong-cd-clock-frequency-with-icelake-laptop)
@@ -370,6 +369,7 @@ The main places to check:
   * Make sure either Above4G is enabled in the BIOS, if no option available then add `npci=0x2000` to boot args.
     * Some X99 and X299 boards(ie. GA-X299-UD4) may require both npci boot-arg and Above4G enabled
     * AMD CPU Note: **Do not have both the Above4G setting enabled and npci in boot args, they will conflict**
+    * 2020+ BIOS Notes: When enabling Above4G, Resizable BAR Support may become an available. Please ensure this is **Disabled** instead of set to Auto.
   * Other BIOS settings that are important: CSM disabled, Windows 8.1/10 UEFI Mode enabled
 * **NVMe or SATA issue**:
   * Sometimes if either a bad SATA controller or an unsupported NVMe drive are used, you can commonly get stuck here. Things you can check:
