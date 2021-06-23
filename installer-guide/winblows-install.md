@@ -1,7 +1,5 @@
 # Making the installer in Windows
 
-* Supported version: 0.6.7
-
 While you don't need a fresh install of macOS to use OpenCore, some users prefer having a fresh slate with their boot manager upgrades.
 
 To start you'll need the following:
@@ -201,7 +199,7 @@ Next, enter "Process MBR" then select "Restore MBR" and select the **boot0** fil
 | :--- | :--- |
 | ![](../images/installer-guide/winblows-install-md/restore-mbr.png) | ![](../images/installer-guide/winblows-install-md/restore-mbr-file.png) |
 
-Then head back to the main screen and select "Process PBR" then "Restore PBR". From here, choose the **Boot1f32** file from `Utilities/LegacyBoot/` in OpenCorePkg:
+Then head back to the main screen and select "Process PBR" then "Restore PBR". From here, choose the **boot1f32** file from `Utilities/LegacyBoot/` in OpenCorePkg:
 
 | Restore PBR | Restore boot1f32 file |
 | :--- | :--- |
